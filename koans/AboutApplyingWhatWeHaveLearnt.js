@@ -83,10 +83,16 @@ describe("About Applying What We Have Learnt", function() {
 
   it("should count the ingredient occurrence (functional)", function () {
     var ingredientCount = { "{ingredient name}": 0 };
+    
+    _.sortBy(function (ingredientCount) { return ingredientCount["ingredient name"] })
+    let ingradiendName = _.map(function (ingredientCount) {
+      return ingredientCount["ingredient name"];
+    })
 
+    let chainMas = ingradiendName.chain(ingredientCount);
     /* chain() together map(), flatten() and reduce() */
 
-    expect(ingredientCount['mushrooms']).toBe(undefined);
+    expect(ingredientCount['mushrooms']).toBe(chainMas);
   });
 
   /*********************************************************************************/
